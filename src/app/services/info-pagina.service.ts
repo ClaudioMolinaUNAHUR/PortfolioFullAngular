@@ -9,6 +9,7 @@ export class InfoPaginaService {
   info: infoPagina = {};
   cargada = false;
   equipo: any[] = [];
+  url:string = "https://angular-html-ed787-default-rtdb.firebaseio.com/"
 
   constructor(private http: HttpClient) {
     this.cargarInfo();
@@ -25,13 +26,13 @@ export class InfoPaginaService {
   }
 
   private cargarEquipo(){
-    this.http.get('https://angular-html-ed787-default-rtdb.firebaseio.com/equipo'+'.json')
+    this.http.get(this.url + '/equipo'+'.json')
       .subscribe( resp =>{
         let personas = Object.values(resp)
         for(let persona of personas){
           this.equipo.push(persona);
         }
-        console.log(this.equipo);
+        // console.log(this.equipo);
       })
 
   }
