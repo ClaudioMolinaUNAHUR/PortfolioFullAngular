@@ -11,6 +11,11 @@ body{
     width: 80%;
     margin: 0 auto;
   }
+
+  .transparencia{
+    mix-blend-mode:exclusion;
+    color:whitesmoke;
+  }
   
   
   /*
